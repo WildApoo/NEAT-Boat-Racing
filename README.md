@@ -1,95 +1,77 @@
-# TER : Réseau de Neurones *From Scratch* & Simulations Évolutives
+# NEAT-Boat-Racing
 
-Bienvenue dans ce projet de création de réseau de neurones codé "from scratch" (sans l'utilisation de librairies de Machine Learning comme TensorFlow ou PyTorch) et ses applications dans différentes simulations basées sur des algorithmes génétiques.
+## Description du projet
 
-**Note Importante ("Made with AI")** : 
-Toute la logique mathématique (Numpy) et l'architecture du réseau sont propres au projet. Toutefois, **les classes dédiées à la visualisation des simulations (via Pygame/Matplotlib), ainsi que tout le système de sauvegarde et de chargement (load and save) du *Cerveau* (réseau de neurones), ont été entièrement codés à l'aide de l'Intelligence Artificielle.**
+Ce projet a pour objectif d'implémenter un réseau de neurones conçu *from scratch* (sans l'utilisation de frameworks de Deep Learning tiers) combiné à un algorithme génétique. Il vise à simuler et à étudier le pilotage autonome de bateaux évoluant au sein d'un circuit de course pour apprendre à franchir efficacement une série de points de contrôle (*checkpoints*).
 
 ---
 
 ## Fonctionnalités Principales
 
-* **Réseau de neurones *from scratch*** : Création d'une architecture de neurones (couches, fonctions d'activation, poids et biais) gérée via `numpy`.
-* **Algorithme Génétique** : Implémentation d'algorithmes évolutionnistes (mutations, différentes méthodes de sélection : *fitness proportionate*, par rang, par tournoi, etc.).
-* **Simulations** :
-  * **Parcours Bateau** : Une simulation où des "bateaux" apprennent à naviguer sur un circuit et à franchir des checkpoints grâce à l'évolution.
-  * **Eau et Civilisation** : Simulateur de développement d'entités autour de points d'eau.
-* **Système de Logs et Sauvegardes** : Export au format JSON des meilleurs modèles ("Cerveaux") évalués au fil des époques.
+* **Réseau de neurones *from scratch*** : Implémentation complète de l'architecture neuronale (couches, fonctions d'activation, poids et biais) via `numpy`.
+* **Algorithme Génétique** : Sélection, croisement et mutation permettant l'apprentissage de conduite autonome au fil des générations.
+* **Environnement de course (Parcours Bateau)** : Simulation interactive de conduite et d'apprentissage évolutif sur différents tracés.
+* **Gestion des performances** : Enregistrement de la progression et de la fitness des individus pour l'analyse de l'apprentissage.
 
 ---
 
-## Installation
+## ⚠️ État du projet & Évolutions à venir
 
-Le projet utilise un fichier `pyproject.toml` qui liste toutes les dépendances requises (`numpy`, `pygame`, `matplotlib`, `nptyping`, `future`).
+**Le projet est actuellement en cours de développement.**
 
-À la racine du projet (là où se trouve le `pyproject.toml`), ouvrez un terminal. Il est fortement recommandé de créer un environnement virtuel (`.venv`) au préalable pour que tout fonctionne correctement :
+Les évolutions suivantes sont prévues ou en cours d'intégration :
+* **Interactivités & Visualisation** : Les anciens mécanismes de visualisation générés par IA vont être remplacés par une interface développée sur mesure. Cela apportera des fonctionnalités plus interactives, telles qu'une interface de création de parcours d'entrainement, la gestion simplifiée des sauvegardes et l'interaction directe en cours de simulation.
+* **Obstacles** : Ajout d'obstacles dynamique ou fixes durant les phases d'entraînement pour accroître la complexité de navigation.
+* **Refonte de l'architecture** : Les mécanismes de sauvegarde via le `logger` (initialement développés par **Hadrien Clément** pour une visualisation sous Unity) seront ultérieurement supprimés afin de conserver un projet 100 % Python.
 
-1. **Créer l'environnement virtuel :**
+---
+
+## Installation du projet
+
+Le projet s'appuie sur [Poetry](https://python-poetry.org/) pour la gestion des dépendances et de l'environnement virtuel.
+
+1. **Cloner le dépôt et vous placer à la racine du projet.**
+2. **Installer les dépendances avec Poetry :**
    ```bash
-   python -m venv .venv
+   poetry install
    ```
-2. **Activer l'environnement virtuel :**
-   * **Sur Windows :** `.venv\Scripts\activate` ou `.\.venv\Scripts\Activate.ps1` (sur PowerShell)
-   * **Sur Linux / macOS :** `source .venv/bin/activate`
-3. **Installer le projet et ses dépendances :**
+3. **Activer l'environnement virtuel :**
    ```bash
-   pip install -e .
+   poetry shell
    ```
-Cela installera le projet et toutes ses dépendances en mode "éditable".
 
 ---
 
 ## Comment utiliser le projet ?
 
-Une fois l'installation terminée, vous pouvez lancer les deux simulations principales de la manière suivante. Pour vous assurer que les chemins (paths) soient toujours bien détectés, il est conseillé de lancer les scripts depuis la **racine** du projet.
+Pour exécuter la simulation de course de bateaux, lancez le script principal depuis la racine du projet :
 
-### 1. Simulation "Parcours Bateau"
-
-C'est la simulation la plus complète et interactive.
 ```bash
-python src/parcoursBateau/main.py
+poetry run python src/parcoursBateau/main.py
 ```
-Lors de l'exécution dans le terminal, le programme va vous poser plusieurs questions pour paramétrer la session d'entraînement évolutif :
-1. **Affichage (o/n)** : Tapez `o` pour activer le rendu visuel Pygame des bateaux, ou `n` pour faire du calcul rapide en arrière-plan sans rendu.
-2. **Population (pop)** : Renseignez le nombre d'individus par génération (ex: `100`).
-3. **Epoque min** : Nombre de générations minimal avant l'arrêt de la simulation (ex: `50`).
-4. **Méthode de sélection** : Entrez le nom exact de la méthode souhaitée pour sélectionner les individus reproduits, parmi : `fitnessProportionate`, `rangBased`, `tournament`, `score2`, `score4`, ou `score10`.
-5. **Parcours (set)** : Sélectionnez le ou les circuits (de `1` à `6`) à utiliser pour l'entraînement. 
-   - Pour un seul parcours, tapez simplement son numéro (ex: `1`). Le programme vous demandera ensuite si vous souhaitez charger un modèle existant ("Nom sauvegarde bateau"). Appuyez simplement sur **Entrée** pour commencer de zéro.
-   - Pour faire un entraînement successif sur plusieurs parcours, séparez-les par un tiret (ex: `1-2-4` ou `1-6-4-5`). L'IA s'entraînera au fur et à mesure sur ces différents circuits.
 
-***Astuces d'exécution :***
-- **Pour l'entrainement :** Il est très fortement conseillé de **désactiver la visualisation** (`n`) lors d'un apprentissage sur un grand nombre de générations. Le script s'exécutera beaucoup plus rapidement en arrière-plan.
-- **Pour la visualisation :** Si vous souhaitez voir un bateau préalablement entrainé naviguer, activez l'affichage (`o`) et définissez une **population de `1`**. Cela permet au modèle chargé de naviguer seul et d'être facilement observable.
-
-#### Mécaniques avancées de la simulation
-
-* **Sauvegarde et Chargement (Save & Load) :** À la fin de la simulation (ou à chaque point clé), les meilleurs réseaux de neurones sont enregistrés au format `.json` dans `src/parcoursBateau/sauvegardes bateaux/`. Ce fichier contient la topologie, les poids et les biais du *"Cerveau"*. Pour recharger un de ces modèles, il suffit d'entrer son nom (sans l'extension, ou avec, selon votre logique) à l'invite "Nom sauvegarde bateau", et le bateau reprendra son apprentissage (ou l'application) tel que vous l'avez laissé.
-* **Transmission de génération et Mutations :** Chaque bateau possède des "gènes" (les poids et biais de son réseau). À la fin de chaque époque (génération), les individus avec le meilleur score (fitness) sont sélectionnés. Leurs gènes sont **transmis** pour créer la nouvelle population, tout en appliquant des **mutations** aléatoires. Cela permet d'explorer et d'apprendre de nouvelles trajectoires pour atteindre les checkpoints.
-* **Système de Logs et d'Analyse :** Les performances de chaque génération (fitness maximum, fitness moyen, etc.) sont systématiquement écrites dans des fichiers de log au format JSON dans le dossier `logs/`. Ces fichiers vous permettent, par exemple, d'utiliser le script `analyse post entrainement.py` pour générer des courbes `matplotlib` et visualiser la courbe d'apprentissage et la progression de votre algorithme !
-
-### 2. Simulation "Eau et Civilisation"
-
-Une simulation visuelle de déplacement et de développement.
-```bash
-python src/eauEtCivilisation/main.py
-```
-Le code lancera directement la simulation (une interface graphique devrait s'ouvrir pour visualiser la logique).
+Des invites interactives dans le terminal vous permettront de configurer votre session :
+* **Affichage (o/n)** : Activer le rendu graphique Pygame ou exécuter l'entraînement en arrière-plan (mode headless).
+* **Population** : Nombre de bateaux simulés par génération.
+* **Époques** : Nombre minimum de générations à exécuter.
+* **Méthode de sélection** : Sélection du mode de reproduction (`fitnessProportionate`, `rangBased`, `tournament`, etc.).
+* **Parcours** : Choix du ou des circuits d'entraînement.
 
 ---
 
 ## Structure globale du code
 
 ```text
-├── install/                   # Scripts automatiques d'installation .bat
-├── src/                       # Code source Python (installé en module)
-│   ├── reseauNeurone/         # Le coeur "From scratch" (cerveau.py, couche.py)
-│   ├── parcoursBateau/        # Code de la simulation d'évolution des bateaux
-│   │   ├── sauvegardes bateaux/    # Models entrainés
-│   │   ├── __init__.py, main.py, Bateau.py, etc...
-│   └── eauEtCivilisation/     # Code de l'autre simulation
-│       ├── __init__.py, main.py, city.py, waterPoint.py, etc...
-├── logs/                      # Dossier pour les fichiers de logging
-├── pyproject.toml             # Configuration du module Python
-└── readme.md                  # Ce fichier
+NEAT-Boat-Racing/
+│
+├── src/
+│   ├── UserInterface/          # Interface utilisateur & visualisation
+│   ├── reseauNeurone/         # Module 'From Scratch' du réseau de neurones (cerveau, couches)
+│   └── parcoursBateau/        # Logique de la simulation de course et entités (bateau, checkpoints)
+│       ├── sauvegardes bateaux/    # Modèles réseau sauvegardés (.json)
+│       └── ...
+│
+├── logs/                      # Fichiers de log des sessions d'entraînement
+├── pyproject.toml             # Configuration et dépendances du projet (Poetry)
+└── README.md                  # Documentation du projet
 ```
