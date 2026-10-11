@@ -1,0 +1,27 @@
+[project]
+name = "neatshipracing"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Adrien",email = "sushapoo@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy (>=2.5.3,<3.0.0)",
+    "pygame (>=2.6.1,<3.0.0)",
+    "matplotlib (>=3.11.2,<4.0.0)",
+    "future (>=1.0.0,<2.0.0)",
+    "pillow (>=12.3.0,<13.0.0)"
+]
+
+[tool.poetry]
+packages = [
+            {include = "parcoursBateau", from = "src"},
+            {include = "reseauNeurone", from = "src"},
+            {include = "UserInterface", from = "src"},
+            ]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

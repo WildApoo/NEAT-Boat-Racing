@@ -1,0 +1,40 @@
+{
+    "input": [
+        [
+            0.7636268757429274
+        ],
+        [
+            0.679409143834635
+        ]
+    ],
+    "output": [
+        [
+            [
+                0.3680710500328741,
+                0.7128266719599677
+            ],
+            [
+                0.05067478472636955,
+                -0.8293630840426595
+            ]
+        ],
+        [
+            [
+                1.09385906690744
+            ],
+            [
+                -0.736462529401409
+            ]
+        ],
+        "tanh"
+    ],
+    "couches": [],
+    "simulation_params": {
+        "pop_size": 400,
+        "fonctionActivation": "tanh",
+        "fileNameBateauDepart": "",
+        "numeroSet": "13",
+        "epoque_min": 1,
+        "methode_selection": "score10"
+    }
+}

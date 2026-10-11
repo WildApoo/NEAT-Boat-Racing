@@ -1,0 +1,22 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*$py.class
+
+# Environnements virtuels
+venv/
+../.venv/
+env/
+
+dist/
+.lock
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Dossiers de logs (si tu veux ignorer tes fichiers .gz ou .bin générés)
+# logs/log_test/

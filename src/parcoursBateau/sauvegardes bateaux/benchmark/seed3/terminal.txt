@@ -1,0 +1,143 @@
+PS D:\mes programmes python\reseauNeurone> & "d:/mes programmes python/reseauNeurone/.venv/Scripts/python.exe" "d:/mes programmes python/reseauNeurone/src/parcoursBateau/main.py"
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.0)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Affichage o/n
+: n
+pop
+: 400
+epoque min
+: 1
+methode selection
+: score10
+set  (pour faire un enchainement de parcours, séparer les noms des sets par "-", ex 1-2-4
+: 10-11-12-13
+----- set10 -----
+enregistrer les données de la simulation ? y
+:
+1
+-- Sélection & mutation n°1 --
+Bateau : 395 | score : 21.4536 | température : 5.000 | dynamisme apprentissage : debut
+2
+-- Sélection & mutation n°2 --
+Bateau : 395 | score : 21.4536 | température : 4.950 | dynamisme apprentissage : debut
+3
+-- Sélection & mutation n°3 --
+Bateau : 308 | score : 21.5969 | température : 4.950 | dynamisme apprentissage : debut
+4
+-- Sélection & mutation n°4 --
+Bateau : 27 | score : 32.1037 | température : 4.950 | dynamisme apprentissage : debut
+5
+-- Sélection & mutation n°5 --
+Bateau : 294 | score : 43.2483 | température : 4.950 | dynamisme apprentissage : debut
+fin
+Affichage du meilleur bateau...
+Sauvegarde des logs...
+enregistrer meilleur bateau ? y
+:
+----- set11 -----
+enregistrer les données de la simulation ? y
+:
+1
+-- Sélection & mutation n°6 --
+Bateau : 123 | score : 75.9438 | température : 4.950 | dynamisme apprentissage : debut
+fin
+Affichage du meilleur bateau...
+Sauvegarde des logs...
+enregistrer meilleur bateau ? y
+:
+----- set12 -----
+:
+1
+-- Sélection & mutation n°7 --
+Bateau : 378 | score : 151.3413 | température : 4.950 | dynamisme apprentissage : debut
+fin
+Affichage du meilleur bateau...
+Sauvegarde des logs...
+enregistrer meilleur bateau ? y
+:
+----- set13 -----
+enregistrer les données de la simulation ? y
+:
+1
+-- Sélection & mutation n°8 --
+Bateau : 352 | score : 172.7810 | température : 4.950 | dynamisme apprentissage : debut
+fin
+Affichage du meilleur bateau...
+Sauvegarde des logs...
+enregistrer meilleur bateau ? y
+:y
+nom du fichier (sans l'extension) : benchmark/seed3/10-11-12-13
+Cerveau du bateau sauvegardé dans D:\mes programmes python\reseauNeurone\src\parcoursBateau\sauvegardes bateaux\benchmark\seed3\10-11-12-13.json
+[0, 190, 201, 52, 153, 270, 159, 393]
+[0, 135, 204, 366, 383, 235, 45, 17, 90]
+visualiser l'arbre ? o/no
+sujet 352 et heredity : [0, 190, 201, 52, 153, 270, 159, 393]
+PS D:\mes programmes python\reseauNeurone> & "d:/mes programmes python/reseauNeurone/.venv/Scripts/python.exe" "d:/mes programmes python/reseauNeurone/src/parcoursBateau/main.py"
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.0)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Affichage o/n
+: n
+pop
+: 400
+epoque min
+: 1
+methode selection
+: score10
+set  (pour faire un enchainement de parcours, séparer les noms des sets par "-", ex 1-2-4
+: 13
+Nom sauvegarde bateau (skip > enter) : 
+----- set13 -----
+enregistrer les données de la simulation ? y
+:
+1
+-- Sélection & mutation n°1 --
+Bateau : 71 | score : 64.2047 | température : 5.000 | dynamisme apprentissage : debut
+2
+-- Sélection & mutation n°2 --
+Bateau : 364 | score : 107.3398 | température : 5.000 | dynamisme apprentissage : debut
+3
+-- Sélection & mutation n°3 --
+Bateau : 88 | score : 107.6402 | température : 5.000 | dynamisme apprentissage : debut
+4
+-- Sélection & mutation n°4 --
+Bateau : 298 | score : 128.1679 | température : 5.000 | dynamisme apprentissage : debut
+5
+-- Sélection & mutation n°5 --
+Bateau : 342 | score : 139.4759 | température : 5.000 | dynamisme apprentissage : debut
+6
+-- Sélection & mutation n°6 --
+Bateau : 370 | score : 160.6358 | température : 5.000 | dynamisme apprentissage : debut
+7
+-- Sélection & mutation n°7 --
+Bateau : 370 | score : 160.6358 | température : 4.950 | dynamisme apprentissage : debut
+8
+-- Sélection & mutation n°8 --
+Bateau : 370 | score : 160.6358 | température : 4.901 | dynamisme apprentissage : debut
+9
+-- Sélection & mutation n°9 --
+Bateau : 370 | score : 160.6358 | température : 4.851 | dynamisme apprentissage : debut
+10
+-- Sélection & mutation n°10 --
+Bateau : 370 | score : 160.6358 | température : 4.803 | dynamisme apprentissage : debut
+11
+-- Sélection & mutation n°11 --
+Bateau : 370 | score : 160.6358 | température : 4.755 | dynamisme apprentissage : debut
+12
+-- Sélection & mutation n°12 --
+Bateau : 370 | score : 160.6358 | température : 4.707 | dynamisme apprentissage : debut
+13
+-- Sélection & mutation n°13 --
+Bateau : 370 | score : 160.6358 | température : 4.660 | dynamisme apprentissage : debut
+14
+-- Sélection & mutation n°14 --
+Bateau : 89 | score : 171.0568 | température : 4.660 | dynamisme apprentissage : amelioration
+fin
+Affichage du meilleur bateau...
+Sauvegarde des logs...
+enregistrer meilleur bateau ? y
+:y
+nom du fichier (sans l'extension) : benchmark/seed3/13
+Cerveau du bateau sauvegardé dans D:\mes programmes python\reseauNeurone\src\parcoursBateau\sauvegardes bateaux\benchmark\seed3\13.json
+visualiser l'arbre ? o/no
+sujet 89 et heredity : [0, 166, 117, 354, 230, 26, 302, 52, 276, 341, 111, 370, 101, 366]
+PS D:\mes programmes python\reseauNeurone> 
