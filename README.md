@@ -15,7 +15,7 @@ Ce projet a pour objectif d'implémenter un réseau de neurones conçu *from scr
 
 ---
 
-## ⚠️ État du projet & Évolutions à venir
+## État du projet & Évolutions à venir
 
 **Le projet est actuellement en cours de développement.**
 
@@ -66,7 +66,7 @@ NEAT-Boat-Racing/
 │
 ├── src/
 │   ├── UserInterface/          # Interface utilisateur & visualisation
-│   ├── reseauNeurone/         # Module 'From Scratch' du réseau de neurones (cerveau, couches)
+│   ├── NEAT/         # Module 'From Scratch' du réseau de neurones (cerveau, couches)
 │   └── parcoursBateau/        # Logique de la simulation de course et entités (bateau, checkpoints)
 │       ├── sauvegardes bateaux/    # Modèles réseau sauvegardés (.json)
 │       └── ...
